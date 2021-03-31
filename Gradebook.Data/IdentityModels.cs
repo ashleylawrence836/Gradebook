@@ -33,10 +33,6 @@ namespace Gradebook.Data
         }
 
         public DbSet<Student> Students { get; set; }
-        public DbSet<Grade> Grades { get; set; }
-        public DbSet<Course> Courses { get; set; }
-        public DbSet<Assignment> Assignments { get; set; }
-
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
