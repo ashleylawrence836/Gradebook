@@ -9,16 +9,6 @@ namespace Gradebook.Models
 {
     public class Grade
     {
-        [Key]
-        public int GradeId { get; set; }
-        [Required]
-        [Display(Name = "Grade")]
-        public decimal Score { get; set; }
-        [Required]
-        public int StudentId { get; set; }
-        [Required]
-        public int CourseId { get; set; }
-        [Required]
-        public int AssignmentId { get; set; }
+
     }
 }

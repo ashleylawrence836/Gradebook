@@ -9,9 +9,6 @@ namespace Gradebook.Models
 {
     public class Course
     {
-        [Key]
-        public int CourseId { get; set; }
-        [Required]
-        public string Name { get; set; }
+
     }
 }
