@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Gradebook.WebMVC.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
 
@@ -15,7 +16,8 @@ namespace Gradebook.WebMVC.Controllers
         // GET: Student/Index
         public ActionResult Index()
         {
-            return View(_db.Students.ToList());
+            var model = new StudentListItem[0];
+            return View(model);
         }
 
         // GET: Student/Create

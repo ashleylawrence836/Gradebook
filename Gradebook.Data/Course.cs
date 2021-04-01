@@ -16,6 +16,7 @@ namespace Gradebook.Data
         public Guid OwnerId { get; set; }
 
         [Required]
+        [MinLength(2, ErrorMessage = "That's not even a real course.")]
         public string Name { get; set; }
     }
 }

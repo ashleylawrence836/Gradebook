@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace Gradebook.Models
 {
-    public class Grade
+    public class StudentListItem
     {
+        [Display(Name = "Student Id")]
+        public int StudentId { get; set; }
+        public string Name { get; set; }
 
     }
 }

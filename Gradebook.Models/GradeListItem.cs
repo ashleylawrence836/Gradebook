@@ -7,10 +7,17 @@ using System.Threading.Tasks;
 
 namespace Gradebook.Models
 {
-    public class Student
+    public class GradeListItem
     {
-        public int StudentId { get; set; }
-        public string Name { get; set; }
+        public int GradeId { get; set; }
 
+        [Display(Name = "Grade")]
+        public decimal Score { get; set; }
+
+        public int StudentId { get; set; }
+
+        public int CourseId { get; set; }
+
+        public int AssignmentId { get; set; }
     }
 }
