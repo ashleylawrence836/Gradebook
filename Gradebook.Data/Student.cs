@@ -16,10 +16,8 @@ namespace Gradebook.Data
         public Guid OwnerId { get; set; }
 
         [Required]
-        [MinLength(2, ErrorMessage ="Names aren't that short.")]
         public string Name { get; set; }
 
-        [MinLength(2, ErrorMessage = "Nicknames aren't that short.")]
         public string Nickname { get; set; }
     }
 }

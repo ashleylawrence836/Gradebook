@@ -1,5 +1,7 @@
 ﻿using Gradebook.Data;
 using Gradebook.Models;
+using Gradebook.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +18,9 @@ namespace Gradebook.WebMVC.Controllers
         // GET: Student/Index
         public ActionResult Index()
         {
-            var model = new StudentListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new StudentService(userId);
+            var model = service.GetStudents();
             return View(model);
         }
 
@@ -29,16 +33,19 @@ namespace Gradebook.WebMVC.Controllers
         // POST: Student/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Student student)
+        public ActionResult Create(StudentCreate student)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _db.Students.Add(student);
-                _db.SaveChanges();
-                return RedirectToAction("Index");
+                return View(student);
             }
 
-            return View(student);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new StudentService(userId);
+            service.CreateStudent(student);
+
+            return RedirectToAction("Index");
+
         }
     }
 }

@@ -58,6 +58,7 @@
     <Compile Include="Course.cs" />
     <Compile Include="GradeListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentCreate.cs" />
     <Compile Include="StudentListItem.cs" />
   </ItemGroup>
   <ItemGroup>
