@@ -1,4 +1,5 @@
 ﻿using Gradebook.Data;
+using Gradebook.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,21 @@ namespace Gradebook.WebMVC.Controllers
         public ActionResult Create()
         {
             return View();
+        }
+
+        // POST: Student/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Students.Add(student);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(student);
         }
     }
 }

@@ -33,8 +33,7 @@
         @Html.DisplayFor(modelItem => item.Nickname)
     </td>
     <td>
-        @Html.ActionLink("Change", "Edit", new { id = item.StudentId }) |
-        @Html.ActionLink("More Info", "Details", new { id = item.StudentId }) |
+        @Html.ActionLink("Update", "Edit", new { id = item.StudentId }) |
         @Html.ActionLink("Remove", "Delete", new { id = item.StudentId })
     </td>
 </tr>
