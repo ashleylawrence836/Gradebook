@@ -48,7 +48,14 @@ namespace Gradebook.WebMVC.Controllers
             ModelState.AddModelError("", "Unable to add Student.");
 
             return View(student);
+        }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateStudentService();
+            var model = svc.GetStudentById(id);
+
+            return View(model);
         }
 
         private StudentService CreateStudentService()

@@ -1,5 +1,6 @@
 ﻿using Gradebook.Data;
 using Gradebook.Models;
+using Gradebook.Models.Student;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,11 +47,28 @@ namespace Gradebook.Services
                         e =>
                         new StudentListItem
                         {
-                            StudentId = e.StudentId,
                             Name = e.Name,
                         }).ToList();
 
                 return query;
+            }
+        }
+
+        public StudentDetail GetStudentById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Students
+                    .Single(e => e.StudentId == id && e.OwnerId == _userId);
+                return
+                    new StudentDetail
+                    {
+                        StudentId = entity.StudentId,
+                        Name = entity.Name,
+                        Nickname = entity.Nickname
+                    };
             }
         }
     }
