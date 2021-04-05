@@ -5,13 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gradebook.Models
+namespace Gradebook.Models.Student
 {
-    public class StudentListItem
+    public class StudentEdit
     {
         public int StudentId { get; set; }
         public string Name { get; set; }
-        public  string Nickname { get; set; }
-
+        public string Nickname { get; set; }
     }
 }

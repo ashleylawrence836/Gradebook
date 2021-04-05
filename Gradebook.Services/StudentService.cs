@@ -47,7 +47,8 @@ namespace Gradebook.Services
                         e =>
                         new StudentListItem
                         {
-                            Name = e.Name,
+                            StudentId = e.StudentId,
+                            Name = e.Name // ternary
                         }).ToList();
 
                 return query;
@@ -69,6 +70,23 @@ namespace Gradebook.Services
                         Name = entity.Name,
                         Nickname = entity.Nickname
                     };
+            }
+        }
+
+        public bool UpdateStudent(StudentEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Students
+                    .Single(e => e.StudentId == model.StudentId && e.OwnerId == _userId);
+
+                entity.StudentId = model.StudentId;
+                entity.Name = model.Name;
+                entity.Nickname = model.Nickname;
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

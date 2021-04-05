@@ -1,5 +1,6 @@
 ﻿using Gradebook.Data;
 using Gradebook.Models;
+using Gradebook.Models.Student;
 using Gradebook.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -56,6 +57,45 @@ namespace Gradebook.WebMVC.Controllers
             var model = svc.GetStudentById(id);
 
             return View(model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateStudentService();
+            var detail = service.GetStudentById(id);
+            var student =
+                new StudentEdit
+                {
+                    StudentId = detail.StudentId,
+                    Name = detail.Name,
+                    Nickname = detail.Nickname
+                };
+
+            return View(student);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, StudentEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.StudentId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateStudentService();
+
+            if (service.UpdateStudent(model))
+            {
+                TempData["SaveResult"] = "Student successfully updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Student could not be updated.");
+            return View();
         }
 
         private StudentService CreateStudentService()

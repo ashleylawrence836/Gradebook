@@ -24,9 +24,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.StudentId)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th></th>
@@ -36,15 +33,12 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.StudentId)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.ActionLink("Update", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("More Info", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Remove", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Update", "Edit", new { id=item.StudentId }) |
+                @Html.ActionLink("More Info", "Details", new { id=item.StudentId }) |
+                @Html.ActionLink("Remove", "Delete", new { id=item.StudentId })
             </td>
         </tr>
     }
