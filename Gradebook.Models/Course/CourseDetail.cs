@@ -7,11 +7,15 @@ using System.Threading.Tasks;
 
 namespace Gradebook.Models.Course
 {
-    public class CourseListItem
+    public class CourseDetail
     {
-        public int CourseId { get; set; }
+        [Display(Name = "Course Name")]
         public string Name { get; set; }
+
+        [Display(Name = "Start Date")]
         public DateTimeOffset StartDate { get; set; }
+
+        [Display(Name = "End Date")]
         public DateTimeOffset EndDate { get; set; }
     }
 }

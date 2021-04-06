@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Assignment.cs" />
     <Compile Include="Course\CourseCreate.cs" />
+    <Compile Include="Course\CourseDetail.cs" />
     <Compile Include="Course\CourseListItem.cs" />
     <Compile Include="GradeListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

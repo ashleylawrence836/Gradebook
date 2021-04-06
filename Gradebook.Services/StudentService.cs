@@ -49,7 +49,7 @@ namespace Gradebook.Services
                         {
                             StudentId = e.StudentId,
                             Name = e.Name // ternary
-                        }).ToList();
+                        }).ToArray();
 
                 return query;
             }
