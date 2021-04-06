@@ -5,17 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gradebook.Data
+namespace Gradebook.Models.Course
 {
-    public class Course
+    public class CourseCreate
     {
-        [Key]
-        public int CourseId { get; set; }
-
         [Required]
-        public Guid OwnerId { get; set; }
-
-        [Required]
+        [MinLength(2, ErrorMessage = "That's not even a real course.")]
+        [MaxLength(15, ErrorMessage = "Too many characters.")]
         public string Name { get; set; }
 
         [Required]

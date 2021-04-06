@@ -5,23 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gradebook.Data
+namespace Gradebook.Models.Course
 {
-    public class Course
+    public class CourseListItem
     {
-        [Key]
-        public int CourseId { get; set; }
-
-        [Required]
-        public Guid OwnerId { get; set; }
-
-        [Required]
+        [Display(Name="Course Name")]
         public string Name { get; set; }
 
-        [Required]
+        [Display(Name = "Start Date")]
         public DateTimeOffset StartDate { get; set; }
 
-        [Required]
+        [Display(Name = "End Date")]
         public DateTimeOffset EndDate { get; set; }
     }
 }
