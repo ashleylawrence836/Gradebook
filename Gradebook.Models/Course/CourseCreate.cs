@@ -15,9 +15,11 @@ namespace Gradebook.Models.Course
         public string Name { get; set; }
 
         [Required]
+        [Display(Name = "Start Date")]
         public DateTimeOffset StartDate { get; set; }
 
         [Required]
+        [Display(Name = "End Date")]
         public DateTimeOffset EndDate { get; set; }
     }
 }

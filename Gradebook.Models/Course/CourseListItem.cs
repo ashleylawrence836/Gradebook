@@ -11,7 +11,9 @@ namespace Gradebook.Models.Course
     {
         public int CourseId { get; set; }
         public string Name { get; set; }
+        [Display(Name = "Start Date")]
         public DateTimeOffset StartDate { get; set; }
+        [Display(Name = "End Date")]
         public DateTimeOffset EndDate { get; set; }
     }
 }

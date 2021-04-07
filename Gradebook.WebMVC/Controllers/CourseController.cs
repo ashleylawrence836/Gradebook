@@ -30,17 +30,29 @@ namespace Gradebook.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CourseCreate course)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(course);
-            }
+            if (!ModelState.IsValid) return View(course);
 
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CourseService(userId);
+            var service = CreateCourseService();
 
             service.CreateCourse(course);
 
-            return RedirectToAction("Index");
+            if (service.CreateCourse(course))
+            {
+                TempData["SaveResult"] = "Course created.";
+                return RedirectToAction("Index");
+            }//;
+
+            ModelState.AddModelError("", "Unable to add this course.");
+
+            return View(course);
+
+        }
+
+        private CourseService CreateCourseService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CourseService(userId);
+            return service;
         }
     }
 }
