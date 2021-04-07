@@ -75,5 +75,22 @@ namespace Gradebook.Services
                     };
             }
         }
+
+        public bool UpdateCourse(CourseEdit course)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Courses
+                    .Single(e => e.CourseId == course.CourseId && e.OwnerId == _userId);
+
+                entity.Name = course.Name;
+                entity.StartDate = course.StartDate;
+                entity.EndDate = course.EndDate;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

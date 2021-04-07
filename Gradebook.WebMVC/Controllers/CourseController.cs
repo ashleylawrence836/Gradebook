@@ -55,6 +55,23 @@ namespace Gradebook.WebMVC.Controllers
             return View(course);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateCourseService();
+            var detail = service.GetCourseById(id);
+            var model =
+                new CourseEdit
+                {
+                    CourseId = detail.CourseId,
+                    Name = detail.Name,
+                    StartDate = detail.StartDate,
+                    EndDate = detail.EndDate
+                };
+
+            return View(model);
+
+        }
+
         private CourseService CreateCourseService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
