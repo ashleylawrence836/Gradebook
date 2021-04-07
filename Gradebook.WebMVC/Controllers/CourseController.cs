@@ -40,7 +40,7 @@ namespace Gradebook.WebMVC.Controllers
             {
                 TempData["SaveResult"] = "Course created.";
                 return RedirectToAction("Index");
-            }//;
+            }
 
             ModelState.AddModelError("", "Unable to add this course.");
 
@@ -69,7 +69,30 @@ namespace Gradebook.WebMVC.Controllers
                 };
 
             return View(model);
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, CourseEdit course)
+        {
+            if (!ModelState.IsValid) return View(course);
+
+            if(course.CourseId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(course);
+            }
+
+            var service = CreateCourseService();
+
+            if(service.UpdateCourse(course))
+            {
+                TempData["SaveResult"] = "Course successfully updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Course could not be updated.");
+            return View();
         }
 
         private CourseService CreateCourseService()
