@@ -27,7 +27,7 @@ namespace Gradebook.Services
                     StartDate = course.StartDate,
                     EndDate = course.EndDate
                 };
-            
+
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Courses.Add(entity);
@@ -78,7 +78,7 @@ namespace Gradebook.Services
 
         public bool UpdateCourse(CourseEdit course)
         {
-            using(var ctx = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
@@ -88,6 +88,21 @@ namespace Gradebook.Services
                 entity.Name = course.Name;
                 entity.StartDate = course.StartDate;
                 entity.EndDate = course.EndDate;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteCourse(int courseId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Courses
+                    .Single(e => e.CourseId == courseId && e.OwnerId == _userId);
+
+                ctx.Courses.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

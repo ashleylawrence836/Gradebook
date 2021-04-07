@@ -71,6 +71,28 @@ namespace Gradebook.WebMVC.Controllers
             return View(model);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateCourseService();
+            var course = svc.GetCourseById(id);
+
+            return View(course);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateCourseService();
+
+            service.DeleteCourse(id);
+
+            TempData["SaveResult"] = "Course successfully deleted.";
+            return RedirectToAction("Index");
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, CourseEdit course)
