@@ -16,10 +16,12 @@ namespace Gradebook.Models.Course
 
         [Required]
         [Display(Name = "Start Date")]
+        [DataType(DataType.Date)]
         public DateTimeOffset StartDate { get; set; }
 
         [Required]
         [Display(Name = "End Date")]
+        [DataType(DataType.Date)]
         public DateTimeOffset EndDate { get; set; }
     }
 }
