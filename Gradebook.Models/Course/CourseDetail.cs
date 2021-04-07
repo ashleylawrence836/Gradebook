@@ -9,6 +9,9 @@ namespace Gradebook.Models.Course
 {
     public class CourseDetail
     {
+        [Display(Name = "Course Id")]
+        public int CourseId { get; set; }
+
         [Display(Name = "Course Name")]
         public string Name { get; set; }
 

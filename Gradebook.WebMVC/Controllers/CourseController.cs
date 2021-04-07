@@ -45,7 +45,14 @@ namespace Gradebook.WebMVC.Controllers
             ModelState.AddModelError("", "Unable to add this course.");
 
             return View(course);
+        }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateCourseService();
+            var course = svc.GetCourseById(id);
+
+            return View(course);
         }
 
         private CourseService CreateCourseService()

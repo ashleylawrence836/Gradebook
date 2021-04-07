@@ -56,5 +56,24 @@ namespace Gradebook.Services
                 return query.ToArray();
             }
         }
+
+        public CourseDetail GetNoteById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Courses
+                    .Single(e => e.CourseId == id && e.OwnerId == _userId);
+                return
+                    new CourseDetail
+                    {
+                        CourseId = entity.CourseId,
+                        Name = entity.Name,
+                        StartDate = entity.StartDate,
+                        EndDate = entity.EndDate
+                    };
+            }
+        }
     }
 }
