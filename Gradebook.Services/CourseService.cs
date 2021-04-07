@@ -57,7 +57,7 @@ namespace Gradebook.Services
             }
         }
 
-        public CourseDetail GetNoteById(int id)
+        public CourseDetail GetCourseById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
