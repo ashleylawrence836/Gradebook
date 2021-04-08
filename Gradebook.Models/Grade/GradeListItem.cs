@@ -5,18 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gradebook.Data
+namespace Gradebook.Models.Grade
 {
-    public class Grade
+    public class GradeListItem
     {
-        [Key]
         public int GradeId { get; set; }
 
-        [Required]
-        public Guid OwnerId { get; set; }
-
-        [Required]
+        [Display(Name="Grade")]
         public decimal Score { get; set; }
-
     }
 }
