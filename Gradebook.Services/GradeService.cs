@@ -86,5 +86,20 @@ namespace Gradebook.Services
             }
         }
 
+        public bool DeleteGrade(int gradeId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Grades
+                    .Single(e => e.GradeId == gradeId && e.OwnerId == _userId);
+
+                ctx.Grades.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
 }
