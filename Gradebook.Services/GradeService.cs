@@ -54,5 +54,22 @@ namespace Gradebook.Services
             }
         }
 
+        public GradeDetail GetGradeById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Grades
+                    .Single(e => e.GradeId == id && e.OwnerId == _userId);
+                return
+                    new GradeDetail
+                    {
+                        GradeId = entity.GradeId,
+                        Score = entity.Score
+                    };
+            }
+        }
+
     }
 }

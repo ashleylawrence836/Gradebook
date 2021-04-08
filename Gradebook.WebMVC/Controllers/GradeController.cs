@@ -46,6 +46,14 @@ namespace Gradebook.WebMVC.Controllers
 
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateGradeService();
+            var model = svc.GetGradeById(id);
+
+            return View(model);
+        }
+
         private GradeService CreateGradeService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
