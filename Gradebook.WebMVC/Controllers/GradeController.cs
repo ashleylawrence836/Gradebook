@@ -31,18 +31,26 @@ namespace Gradebook.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(GradeCreate grade)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) return View(grade);
+
+            var service = CreateGradeService();
+
+            if (service.CreateGrade(grade))
             {
-                return View(grade);
+                TempData["SaveResult"] = "Grade successfully recorded.";
+                return RedirectToAction("Index");
             }
 
+            ModelState.AddModelError("", "Grade could not be added.");
+            return View(grade);
+
+        }
+
+        private GradeService CreateGradeService()
+        {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new GradeService(userId);
-
-            service.CreateGrade(grade);
-
-            return RedirectToAction("Index");
-
+            return service;
         }
     }
 }
