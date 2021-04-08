@@ -248,6 +248,7 @@
     <Content Include="Views\Course\Details.cshtml" />
     <Content Include="Views\Course\Edit.cshtml" />
     <Content Include="Views\Course\Delete.cshtml" />
+    <Content Include="Views\Grade\Create.cshtml" />
     <Content Include="Views\Grade\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

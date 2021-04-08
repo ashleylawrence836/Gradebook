@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Gradebook.Models.GradeListItem>
+﻿@model IEnumerable<Gradebook.Models.Grade.GradeListItem>
 
 @{
     ViewBag.Title = "Index";
@@ -7,24 +7,12 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Add Grade", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.GradeId)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Score)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StudentId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CourseId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AssignmentId)
         </th>
         <th></th>
     </tr>
@@ -32,19 +20,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.GradeId)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Score)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StudentId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CourseId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AssignmentId)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
