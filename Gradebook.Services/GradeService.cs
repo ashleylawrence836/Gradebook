@@ -71,5 +71,20 @@ namespace Gradebook.Services
             }
         }
 
+        public bool UpdateGrade(GradeEdit grade)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Grades
+                    .Single(e => e.GradeId == grade.GradeId && e.OwnerId == _userId);
+
+                entity.Score = grade.Score;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
 }

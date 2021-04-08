@@ -54,6 +54,44 @@ namespace Gradebook.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateGradeService();
+            var detail = service.GetGradeById(id);
+            var model =
+                new GradeEdit
+                {
+                    GradeId = detail.GradeId,
+                    Score = detail.Score
+                };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, GradeEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.GradeId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateGradeService();
+
+            if (service.UpdateGrade(model))
+            {
+                TempData["SaveResult"] = "Grade successfully updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Grade could not be updated.");
+            return View(model);
+        }
+
         private GradeService CreateGradeService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
