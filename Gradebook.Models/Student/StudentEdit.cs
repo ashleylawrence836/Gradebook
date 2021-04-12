@@ -12,5 +12,6 @@ namespace Gradebook.Models.Student
         public int StudentId { get; set; }
         public string Name { get; set; }
         public string Nickname { get; set; }
+        public int CourseId { get; set; }
     }
 }

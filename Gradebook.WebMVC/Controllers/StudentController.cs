@@ -68,7 +68,8 @@ namespace Gradebook.WebMVC.Controllers
                 {
                     StudentId = detail.StudentId,
                     Name = detail.Name,
-                    Nickname = detail.Nickname
+                    Nickname = detail.Nickname,
+                    CourseId = detail.CourseId
                 };
 
             return View(student);

@@ -68,7 +68,8 @@ namespace Gradebook.Services
                     {
                         StudentId = entity.StudentId,
                         Name = entity.Name,
-                        Nickname = entity.Nickname
+                        Nickname = entity.Nickname,
+                        CourseId = entity.CourseId
                     };
             }
         }
@@ -85,6 +86,7 @@ namespace Gradebook.Services
                 entity.StudentId = model.StudentId;
                 entity.Name = model.Name;
                 entity.Nickname = model.Nickname;
+                //entity.CourseId = model.CourseId;
 
                 return ctx.SaveChanges() == 1;
             }

@@ -62,7 +62,9 @@ namespace Gradebook.WebMVC.Controllers
                 new GradeEdit
                 {
                     GradeId = detail.GradeId,
-                    Score = detail.Score
+                    Score = detail.Score,
+                    CourseId = detail.CourseId,
+                    StudentId = detail.StudentId
                 };
 
             return View(model);

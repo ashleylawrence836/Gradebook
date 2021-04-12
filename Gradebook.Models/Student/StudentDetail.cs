@@ -16,5 +16,6 @@ namespace Gradebook.Models.Student
 
         [Display(Name = "Preferred Name")]
         public string Nickname { get; set; }
+        public int CourseId { get; set; }
     }
 }
