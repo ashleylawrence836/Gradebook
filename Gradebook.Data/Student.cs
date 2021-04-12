@@ -21,11 +21,5 @@ namespace Gradebook.Data
 
         public string Nickname { get; set; }
 
-        //[Required]
-        //public int CourseId { get; set; }
-
-        [ForeignKey("CourseId")]
-        public virtual Course Course { get; set; }
-
     }
 }

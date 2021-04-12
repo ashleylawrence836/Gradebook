@@ -7,13 +7,13 @@ namespace Gradebook.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class foreignkey : IMigrationMetadata
+    public sealed partial class studentForeignkey : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(foreignkey));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(studentForeignkey));
         
         string IMigrationMetadata.Id
         {
-            get { return "202104112209230_foreignkey"; }
+            get { return "202104120123443_studentForeignkey"; }
         }
         
         string IMigrationMetadata.Source

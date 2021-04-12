@@ -18,6 +18,5 @@ namespace Gradebook.Models
         [MaxLength(10, ErrorMessage = "Just stick with their real name")]
         public string Nickname { get; set; }
 
-        public int CourseId { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using Gradebook.Models;
 using Gradebook.Models.Student;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,8 +69,7 @@ namespace Gradebook.Services
                     {
                         StudentId = entity.StudentId,
                         Name = entity.Name,
-                        Nickname = entity.Nickname,
-                        CourseId = entity.CourseId
+                        Nickname = entity.Nickname
                     };
             }
         }
@@ -86,7 +86,6 @@ namespace Gradebook.Services
                 entity.StudentId = model.StudentId;
                 entity.Name = model.Name;
                 entity.Nickname = model.Nickname;
-                //entity.CourseId = model.CourseId;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -104,6 +103,18 @@ namespace Gradebook.Services
                 ctx.Students.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public IEnumerable<Course> GetCourses(int studentId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Grades
+                    .Where(e => e.StudentId == studentId)
+                    .Include(e => e.Course);
             }
         }
     }

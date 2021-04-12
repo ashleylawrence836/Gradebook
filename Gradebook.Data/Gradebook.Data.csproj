@@ -58,9 +58,9 @@
     <Compile Include="Course.cs" />
     <Compile Include="Grade.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202104112209230_foreignkey.cs" />
-    <Compile Include="Migrations\202104112209230_foreignkey.Designer.cs">
-      <DependentUpon>202104112209230_foreignkey.cs</DependentUpon>
+    <Compile Include="Migrations\202104120123443_studentForeignkey.cs" />
+    <Compile Include="Migrations\202104120123443_studentForeignkey.Designer.cs">
+      <DependentUpon>202104120123443_studentForeignkey.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,8 +77,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104112209230_foreignkey.resx">
-      <DependentUpon>202104112209230_foreignkey.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104120123443_studentForeignkey.resx">
+      <DependentUpon>202104120123443_studentForeignkey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
