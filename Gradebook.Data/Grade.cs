@@ -20,10 +20,10 @@ namespace Gradebook.Data
         public decimal Score { get; set; }
 
         [Required]
-        public int CourseId { get; set; }
+        public int AssignmentId { get; set; }
 
-        [ForeignKey("CourseId")]
-        public virtual Course Course { get; set; }
+        [ForeignKey("AssignmentId")]
+        public virtual Assignment Assignment { get; set; }
 
         [Required]
         public int StudentId { get; set; }

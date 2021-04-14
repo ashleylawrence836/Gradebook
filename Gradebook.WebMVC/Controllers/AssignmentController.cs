@@ -87,7 +87,8 @@ namespace Gradebook.WebMVC.Controllers
                     AssignmentId = detail.AssignmentId,
                     Name = detail.Name,
                     DueDate = detail.DueDate,
-                    CourseId = detail.CourseId
+                    CourseId = detail.CourseId,
+                    //list
                 };
 
             return View(model);
@@ -97,8 +98,16 @@ namespace Gradebook.WebMVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, AssignmentEdit model)
+
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                //var userid = Guid.Parse(User.Identity.GetUserId());
+                //assignmentservice serv = new assignmentservice(userid);
+                //var assignments = serv.getassignmentlist();
+                //model.assignments = new selectlist(assignments, "", "")
+                return View(model);
+            }
 
             if (model.AssignmentId != id)
             {

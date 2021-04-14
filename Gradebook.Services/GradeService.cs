@@ -25,7 +25,7 @@ namespace Gradebook.Services
                 {
                     OwnerId = _userId,
                     Score = model.Score,
-                    CourseId = model.CourseId,
+                    AssignmentId = model.AssignmentId,
                     StudentId = model.StudentId
                 };
 
@@ -50,7 +50,7 @@ namespace Gradebook.Services
                         {
                             GradeId = e.GradeId,
                             Score = Math.Round(e.Score),
-                            CourseId = e.CourseId,
+                            AssignmentId = e.AssignmentId,
                             StudentId = e.StudentId
                         });
 
@@ -72,7 +72,7 @@ namespace Gradebook.Services
                     {
                         GradeId = entity.GradeId,
                         Score = entity.Score,
-                        CourseId = entity.CourseId,
+                        AssignmentId = entity.AssignmentId,
                         StudentId = entity.StudentId
                     };
             }
@@ -88,7 +88,7 @@ namespace Gradebook.Services
                     .Single(e => e.GradeId == grade.GradeId && e.OwnerId == _userId);
 
                 entity.Score = grade.Score;
-                entity.CourseId = grade.CourseId;
+                entity.AssignmentId = grade.AssignmentId;
                 entity.StudentId = grade.StudentId;
 
 
@@ -111,10 +111,5 @@ namespace Gradebook.Services
             }
         }
 
-        //public List<StudentListItem> GetStudentDropdown()
-        //{
-        //    var students = Students.ToList();
-        //    List<StudentListItem> listItems = new List<StudentListItem>();
-        //}
     }
 }

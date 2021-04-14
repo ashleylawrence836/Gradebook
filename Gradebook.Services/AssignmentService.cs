@@ -57,6 +57,14 @@ namespace Gradebook.Services
             }
         }
 
+        public IEnumerable<Assignment> GetAssignmentList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Assignments.ToList();
+            }
+        }
+
         public AssignmentDetail GetAssignmentById(int id)
         {
             using (var ctx = new ApplicationDbContext())
