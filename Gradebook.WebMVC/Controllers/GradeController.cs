@@ -27,26 +27,25 @@ namespace Gradebook.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             List<Course> Courses = (new CourseService(userId)).GetCourseList().ToList();
-            var query = from c in Courses
+            var courseQuery = from c in Courses
                         select new SelectListItem()
                         {
                             Value = c.CourseId.ToString(),
                             Text = c.Name
                         };
 
-            ViewBag.CourseId = query.ToList();
-            return View();
-
             List<Student> Students = (new StudentService(userId)).GetStudentList().ToList();
-            var anotherQuery = from s in Students
-                        select new SelectListItem()
-                        {
-                            Value = s.StudentId.ToString(),
-                            Text = s.Name
-                        };
+            var studentQuery = from s in Students
+                               select new SelectListItem()
+                               {
+                                   Value = s.StudentId.ToString(),
+                                   Text = s.Name
+                               };
 
-            ViewBag.CourseId = anotherQuery.ToList();
+            ViewBag.CourseId = courseQuery.ToList();
+            ViewBag.StudentId = studentQuery.ToList();
             return View();
+
         }
 
         [HttpPost]
@@ -78,6 +77,27 @@ namespace Gradebook.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            List<Course> Courses = (new CourseService(userId)).GetCourseList().ToList();
+            var courseQuery = from c in Courses
+                              select new SelectListItem()
+                              {
+                                  Value = c.CourseId.ToString(),
+                                  Text = c.Name
+                              };
+
+            List<Student> Students = (new StudentService(userId)).GetStudentList().ToList();
+            var studentQuery = from s in Students
+                               select new SelectListItem()
+                               {
+                                   Value = s.StudentId.ToString(),
+                                   Text = s.Name
+                               };
+
+            ViewBag.CourseId = courseQuery.ToList();
+            ViewBag.StudentId = studentQuery.ToList();
+            return View();
+
             var service = CreateGradeService();
             var detail = service.GetGradeById(id);
             var model =

@@ -68,6 +68,17 @@ namespace Gradebook.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            List<Course> Courses = (new CourseService(userId)).GetCourseList().ToList();
+            var query = from c in Courses
+                        select new SelectListItem()
+                        {
+                            Value = c.CourseId.ToString(),
+                            Text = c.Name
+                        };
+
+            ViewBag.CourseId = query.ToList();
+
             var service = CreateAssignmentService();
             var detail = service.GetAssignmentById(id);
             var model =
