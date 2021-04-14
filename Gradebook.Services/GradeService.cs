@@ -1,4 +1,5 @@
 ﻿using Gradebook.Data;
+using Gradebook.Models;
 using Gradebook.Models.Grade;
 using System;
 using System.Collections.Generic;
@@ -110,5 +111,10 @@ namespace Gradebook.Services
             }
         }
 
+        //public List<StudentListItem> GetStudentDropdown()
+        //{
+        //    var students = Students.ToList();
+        //    List<StudentListItem> listItems = new List<StudentListItem>();
+        //}
     }
 }

@@ -1,4 +1,5 @@
-﻿using Gradebook.Models;
+﻿using Gradebook.Data;
+using Gradebook.Models;
 using Gradebook.Models.Grade;
 using Gradebook.Services;
 using Microsoft.AspNet.Identity;
@@ -24,6 +25,27 @@ namespace Gradebook.WebMVC.Controllers
 
         public ActionResult Create()
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            List<Course> Courses = (new CourseService(userId)).GetCourseList().ToList();
+            var query = from c in Courses
+                        select new SelectListItem()
+                        {
+                            Value = c.CourseId.ToString(),
+                            Text = c.Name
+                        };
+
+            ViewBag.CourseId = query.ToList();
+            return View();
+
+            List<Student> Students = (new StudentService(userId)).GetStudentList().ToList();
+            var anotherQuery = from s in Students
+                        select new SelectListItem()
+                        {
+                            Value = s.StudentId.ToString(),
+                            Text = s.Name
+                        };
+
+            ViewBag.CourseId = anotherQuery.ToList();
             return View();
         }
 
