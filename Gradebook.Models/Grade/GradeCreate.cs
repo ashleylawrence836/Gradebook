@@ -5,13 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gradebook.Models.Student
+namespace Gradebook.Models.Grade
 {
-    public class StudentEdit
+    public class GradeCreate
     {
+        [Required]
+        [Display(Name="Grade")]
+        [Range(0,100, ErrorMessage ="Extra credit not currently available.")]
+        public decimal Score { get; set; }
+
         public int StudentId { get; set; }
-        public string Name { get; set; }
-        public string Nickname { get; set; }
+
         public int CourseId { get; set; }
     }
 }

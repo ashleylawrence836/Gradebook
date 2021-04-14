@@ -5,13 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gradebook.Models.Student
+namespace Gradebook.Models.Assignment
 {
-    public class StudentEdit
+    public class AssignmentEdit
     {
-        public int StudentId { get; set; }
+        public int AssignmentId { get; set; }
         public string Name { get; set; }
-        public string Nickname { get; set; }
+
+        [Display(Name = "Due Date")]
+        [DataType(DataType.Date)]
+        public DateTimeOffset DueDate { get; set; }
         public int CourseId { get; set; }
     }
 }

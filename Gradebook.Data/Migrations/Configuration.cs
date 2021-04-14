@@ -10,7 +10,6 @@ namespace Gradebook.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Gradebook.Data.ApplicationDbContext";
         }
 
         protected override void Seed(Gradebook.Data.ApplicationDbContext context)

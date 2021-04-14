@@ -57,6 +57,14 @@ namespace Gradebook.Services
             }
         }
 
+        public IEnumerable<Course> GetCourseList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Courses.ToList();
+            }
+        }
+
         public CourseDetail GetCourseById(int id)
         {
             using (var ctx = new ApplicationDbContext())

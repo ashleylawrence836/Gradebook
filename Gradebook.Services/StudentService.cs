@@ -3,6 +3,7 @@ using Gradebook.Models;
 using Gradebook.Models.Student;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,6 +56,14 @@ namespace Gradebook.Services
             }
         }
 
+        public IEnumerable<Student> GetStudentList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Students.ToList();
+            }
+        }
+
         public StudentDetail GetStudentById(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -75,7 +84,7 @@ namespace Gradebook.Services
 
         public bool UpdateStudent(StudentEdit model)
         {
-            using(var ctx = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
@@ -104,5 +113,6 @@ namespace Gradebook.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
     }
 }

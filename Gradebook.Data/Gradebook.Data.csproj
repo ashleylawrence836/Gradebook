@@ -58,17 +58,17 @@
     <Compile Include="Course.cs" />
     <Compile Include="Grade.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202103311917072_InitialCreate.cs" />
-    <Compile Include="Migrations\202103311917072_InitialCreate.Designer.cs">
-      <DependentUpon>202103311917072_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202104120123443_studentForeignkey.cs" />
+    <Compile Include="Migrations\202104120123443_studentForeignkey.Designer.cs">
+      <DependentUpon>202104120123443_studentForeignkey.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104011435511_initialMigration.cs" />
-    <Compile Include="Migrations\202104011435511_initialMigration.Designer.cs">
-      <DependentUpon>202104011435511_initialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202104122330343_studentForeignkeyUpdate.cs" />
+    <Compile Include="Migrations\202104122330343_studentForeignkeyUpdate.Designer.cs">
+      <DependentUpon>202104122330343_studentForeignkeyUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104061343164_course.cs" />
-    <Compile Include="Migrations\202104061343164_course.Designer.cs">
-      <DependentUpon>202104061343164_course.cs</DependentUpon>
+    <Compile Include="Migrations\202104131358012_assignmentForeignkey.cs" />
+    <Compile Include="Migrations\202104131358012_assignmentForeignkey.Designer.cs">
+      <DependentUpon>202104131358012_assignmentForeignkey.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,14 +85,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202103311917072_InitialCreate.resx">
-      <DependentUpon>202103311917072_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104120123443_studentForeignkey.resx">
+      <DependentUpon>202104120123443_studentForeignkey.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104011435511_initialMigration.resx">
-      <DependentUpon>202104011435511_initialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104122330343_studentForeignkeyUpdate.resx">
+      <DependentUpon>202104122330343_studentForeignkeyUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104061343164_course.resx">
-      <DependentUpon>202104061343164_course.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104131358012_assignmentForeignkey.resx">
+      <DependentUpon>202104131358012_assignmentForeignkey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

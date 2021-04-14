@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gradebook.Models.Course;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,5 +17,6 @@ namespace Gradebook.Models.Student
 
         [Display(Name = "Preferred Name")]
         public string Nickname { get; set; }
+        public int CourseId { get; set; }
     }
 }

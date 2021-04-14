@@ -1,25 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gradebook.Data
+namespace Gradebook.Models.Assignment
 {
-    public class Student
+    public class AssignmentDetail
     {
-        [Key]
-        public int StudentId { get; set; }
-
-        [Required]
+        public int AssignmentId { get; set; }
         public Guid OwnerId { get; set; }
-
-        [Required]
         public string Name { get; set; }
 
-        public string Nickname { get; set; }
+        [Display(Name = "Due Date")]
+        public DateTimeOffset DueDate { get; set; }
+        public int CourseId { get; set; }
 
     }
 }

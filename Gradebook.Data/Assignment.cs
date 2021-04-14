@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,10 +17,15 @@ namespace Gradebook.Data
         public Guid OwnerId { get; set; }
 
         [Required]
-        [MinLength(2, ErrorMessage = "You should come up with a more discriptive assignment name.")]
         public string Name { get; set; }
 
         [Required]
+        public DateTimeOffset DueDate { get; set; }
+
+        [Required]
         public int CourseId { get; set; }
+
+        [ForeignKey("CourseId")]
+        public virtual Course Course { get; set; }
     }
 }
