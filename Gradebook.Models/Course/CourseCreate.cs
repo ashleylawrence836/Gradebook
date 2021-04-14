@@ -11,7 +11,7 @@ namespace Gradebook.Models.Course
     {
         [Required]
         [MinLength(2, ErrorMessage = "That's not even a real course.")]
-        [MaxLength(15, ErrorMessage = "Too many characters.")]
+        [MaxLength(40, ErrorMessage = "Too many characters.")]
         public string Name { get; set; }
 
         [Required]

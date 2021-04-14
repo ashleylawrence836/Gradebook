@@ -20,7 +20,7 @@ namespace Gradebook.Models.Student
         public string LastName { get; set; }
 
         [Display(Name = "Preferred Name")]
-        [DisplayFormat(NullDisplayText = "None")]
+        [DisplayFormat(NullDisplayText = "N/A")]
         public string Nickname { get; set; }
 
         [Display(Name = "Full Name")]
@@ -31,6 +31,5 @@ namespace Gradebook.Models.Student
 
         }
 
-        public int CourseId { get; set; }
     }
 }

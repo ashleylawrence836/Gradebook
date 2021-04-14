@@ -23,10 +23,14 @@ namespace Gradebook.Data
         [Required]
         public string LastName { get; set; }
 
-        public string FullName { get; set; }
-
-        [DisplayFormat(NullDisplayText = "None")]
         public string Nickname { get; set; }
+
+        public string FullName
+        {
+            get
+            { return (FirstName + " " + LastName); }
+
+        }
 
     }
 }

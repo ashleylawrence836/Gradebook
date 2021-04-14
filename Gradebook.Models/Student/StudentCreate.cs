@@ -17,7 +17,7 @@ namespace Gradebook.Models
 
         [Required]
         [MinLength(2, ErrorMessage = "Names aren't that short.")]
-        [MaxLength(20, ErrorMessage = "Too many characters in this field.")]
+        [MaxLength(40, ErrorMessage = "Too many characters in this field.")]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
@@ -25,5 +25,6 @@ namespace Gradebook.Models
         [MaxLength(10, ErrorMessage = "Just stick with their real name")]
         public string Nickname { get; set; }
 
+        public int CourseId { get; set; }
     }
 }

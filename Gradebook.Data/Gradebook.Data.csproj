@@ -78,6 +78,10 @@
     <Compile Include="Migrations\202104141947521_studentDataUpdate.Designer.cs">
       <DependentUpon>202104141947521_studentDataUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104142341510_fullnameChange.cs" />
+    <Compile Include="Migrations\202104142341510_fullnameChange.Designer.cs">
+      <DependentUpon>202104142341510_fullnameChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
@@ -107,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104141947521_studentDataUpdate.resx">
       <DependentUpon>202104141947521_studentDataUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104142341510_fullnameChange.resx">
+      <DependentUpon>202104142341510_fullnameChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
