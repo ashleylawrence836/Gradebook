@@ -67,7 +67,8 @@ namespace Gradebook.WebMVC.Controllers
                 new StudentEdit
                 {
                     StudentId = detail.StudentId,
-                    Name = detail.Name,
+                    FirstName = detail.FirstName,
+                    LastName = detail.LastName,
                     Nickname = detail.Nickname
                 };
 

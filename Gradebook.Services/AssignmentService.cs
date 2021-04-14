@@ -94,7 +94,6 @@ namespace Gradebook.Services
                     .Assignments
                     .Single(e => e.AssignmentId == model.AssignmentId && e.OwnerId == _userId);
 
-                entity.AssignmentId = model.AssignmentId;
                 entity.Name = model.Name;
                 entity.DueDate = model.DueDate;
                 entity.CourseId = model.CourseId;

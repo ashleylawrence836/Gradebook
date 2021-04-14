@@ -23,8 +23,9 @@ namespace Gradebook.WebMVC
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap-yeti.css",
+                      "~/Content/site.css",
+                      "~/Content/style.css"));
         }
     }
 }

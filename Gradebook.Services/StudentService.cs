@@ -24,7 +24,8 @@ namespace Gradebook.Services
             var entity =
                 new Student()
                 {
-                    Name = student.Name,
+                    FirstName = student.FirstName,
+                    LastName = student.LastName,
                     Nickname = student.Nickname,
                     OwnerId = _userId
                 };
@@ -49,7 +50,9 @@ namespace Gradebook.Services
                         new StudentListItem
                         {
                             StudentId = e.StudentId,
-                            Name = e.Name // ternary
+                            FirstName = e.FirstName,
+                            LastName = e.LastName,
+                            Nickname = e.Nickname
                         }).ToArray();
 
                 return query;
@@ -76,7 +79,8 @@ namespace Gradebook.Services
                     new StudentDetail
                     {
                         StudentId = entity.StudentId,
-                        Name = entity.Name,
+                        FirstName = entity.FirstName,
+                        LastName = entity.LastName,
                         Nickname = entity.Nickname
                     };
             }
@@ -92,7 +96,8 @@ namespace Gradebook.Services
                     .Single(e => e.StudentId == model.StudentId && e.OwnerId == _userId);
 
                 entity.StudentId = model.StudentId;
-                entity.Name = model.Name;
+                entity.FirstName = model.FirstName;
+                entity.LastName = model.LastName;
                 entity.Nickname = model.Nickname;
 
                 return ctx.SaveChanges() == 1;

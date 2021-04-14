@@ -39,7 +39,7 @@ namespace Gradebook.WebMVC.Controllers
                                select new SelectListItem()
                                {
                                    Value = s.StudentId.ToString(),
-                                   Text = s.Name
+                                   Text = s.FullName
                                };
 
             ViewBag.AssignmentId = assignmentQuery.ToList();
@@ -82,7 +82,7 @@ namespace Gradebook.WebMVC.Controllers
             var assignmentQuery = from a in Assignments
                         select new SelectListItem()
                         {
-                            Value = a.CourseId.ToString(),
+                            Value = a.AssignmentId.ToString(),
                             Text = a.Name
                         };
 
@@ -91,12 +91,11 @@ namespace Gradebook.WebMVC.Controllers
                                select new SelectListItem()
                                {
                                    Value = s.StudentId.ToString(),
-                                   Text = s.Name
+                                   Text = s.FullName
                                };
 
             ViewBag.AssignmentId = assignmentQuery.ToList();
             ViewBag.StudentId = studentQuery.ToList();
-            //return View();
 
             var service = CreateGradeService();
             var detail = service.GetGradeById(id);

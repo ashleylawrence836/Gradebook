@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gradebook.Models.Course;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -18,5 +19,7 @@ namespace Gradebook.Models.Assignment
 
         [Display(Name = "Course")]
         public int CourseId { get; set; }
+        //public IEnumerable<CourseListItem> CourseList { get; set; }
+
     }
 }

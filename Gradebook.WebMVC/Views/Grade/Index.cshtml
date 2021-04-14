@@ -37,22 +37,22 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Score)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.AssignmentId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.StudentId)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.GradeId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.GradeId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.GradeId })
-    </td>
-</tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Score)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignmentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.GradeId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.GradeId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.GradeId })
+            </td>
+        </tr>
     }
 
 </table>
