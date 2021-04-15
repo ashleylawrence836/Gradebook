@@ -34,7 +34,7 @@ namespace Gradebook.WebMVC.Controllers
                             Text = a.Name
                         };
 
-            ViewBag.AssignmentId = assignmentQuery.ToList();
+            ViewBag.Assignment = assignmentQuery.ToList();
             return View();
 
         }

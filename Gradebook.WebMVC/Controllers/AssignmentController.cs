@@ -86,7 +86,16 @@ namespace Gradebook.WebMVC.Controllers
                             Text = c.Name
                         };
 
+            List<Student> Students = (new StudentService(userId)).GetStudentList().ToList();
+            var studentQuery = from s in Students
+                               select new SelectListItem()
+                               {
+                                   Value = s.StudentId.ToString(),
+                                   Text = s.FullName
+                               };
+
             ViewBag.CourseId = query.ToList();
+            ViewBag.StudentId = studentQuery.ToList();
 
             var service = CreateAssignmentService();
             var detail = service.GetAssignmentById(id);

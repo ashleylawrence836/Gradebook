@@ -73,13 +73,15 @@ namespace Gradebook.Services
                     ctx
                     .Courses
                     .Single(e => e.CourseId == id && e.OwnerId == _userId);
+
                 return
                     new CourseDetail
                     {
                         CourseId = entity.CourseId,
                         Name = entity.Name,
                         StartDate = entity.StartDate,
-                        EndDate = entity.EndDate
+                        EndDate = entity.EndDate,
+                        //Average = average
                     };
             }
         }
