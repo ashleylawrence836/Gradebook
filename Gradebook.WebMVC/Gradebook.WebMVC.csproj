@@ -183,7 +183,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Assets\notepads.jpg" />
+    <Content Include="Content\Assets\HomePage.PNG" />
+    <Content Include="Content\Assets\schoolSupplies.jpg" />
+    <Content Include="Content\Assets\Students.PNG" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap-yeti.css" />

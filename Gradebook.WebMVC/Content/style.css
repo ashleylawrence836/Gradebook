@@ -1,8 +1,12 @@
-﻿*{
-    font-family: 'Times New Roman' !important;
+﻿* {
+    font-family: cursive !important;
+    color: white;
 }
 
 body {
-    background-image: url(Assets/notepads.jpg);
+    background-image: url(Assets/schoolSupplies.jpg);
     margin: 0;
+}
+nav {
+
 }
