@@ -2,8 +2,8 @@
 
 ## *About*
 ### My Final Project for Red Badge! :mortar_board: I have built a .NET Framework MVC Web Application using n-tier architecture to create a Gradebook application inspired by a real-world concept. Here are some screenshots of the application.
-![Home Page](https://github.com/ashleylawrence836/Gradebook/Gradebook.WebMVC/Content/Assets/HomePage.PNG "Home Page")
-![Students](https://github.com/ashleylawrence836/Gradebook/Gradebook.WebMVC/Content/Assets/Students.PNG "Students")
+![Home Page](https://github.com/ashleylawrence836/Gradebook/blob/master/Gradebook.WebMVC/Content/Assets/Students.PNG "Home Page")
+![Students](https://github.com/ashleylawrence836/Gradebook/blob/master/Gradebook.WebMVC/Content/Assets/Students.PNG "Students")
 
 
 ## 	:bar_chart: *Data Tables*
