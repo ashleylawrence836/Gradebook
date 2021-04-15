@@ -34,7 +34,6 @@ namespace Gradebook.WebMVC.Controllers
 
             var service = CreateCourseService();
 
-            //service.CreateCourse(course);
 
             if (service.CreateCourse(course))
             {

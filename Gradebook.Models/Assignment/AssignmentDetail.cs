@@ -9,13 +9,21 @@ namespace Gradebook.Models.Assignment
 {
     public class AssignmentDetail
     {
+        [Display(Name = "Assignment Id")]
         public int AssignmentId { get; set; }
         public Guid OwnerId { get; set; }
         public string Name { get; set; }
 
         [Display(Name = "Due Date")]
         public DateTimeOffset DueDate { get; set; }
-        public int CourseId { get; set; }
+
+        [Display(Name = "Student")]
+        public string Student { get; set; }
+
+        [Display(Name = "Course")]
+        public string Course { get; set; }
+
+        public decimal Grade { get; set; }
 
     }
 }

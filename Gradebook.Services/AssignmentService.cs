@@ -25,7 +25,8 @@ namespace Gradebook.Services
                     OwnerId = _userId,
                     Name = model.Name,
                     DueDate = model.DueDate,
-                    CourseId = model.CourseId
+                    CourseId = model.CourseId,
+                    StudentId = model.StudentId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -50,10 +51,18 @@ namespace Gradebook.Services
                             AssignmentId = e.AssignmentId,
                             Name = e.Name,
                             DueDate = e.DueDate,
-                            CourseId = e.CourseId
+                            Course = e.Course.Name
                         });
 
                 return query.ToArray();
+            }
+        }
+
+        public IEnumerable<Assignment> GetAssignmentList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Assignments.ToList();
             }
         }
 
@@ -71,7 +80,8 @@ namespace Gradebook.Services
                             AssignmentId = entity.AssignmentId,
                             Name = entity.Name,
                             DueDate = entity.DueDate,
-                            CourseId = entity.CourseId
+                            Course = entity.Course.Name,
+                            Student = entity.Student.FullName
                         };
 
             }
@@ -86,10 +96,11 @@ namespace Gradebook.Services
                     .Assignments
                     .Single(e => e.AssignmentId == model.AssignmentId && e.OwnerId == _userId);
 
-                entity.AssignmentId = model.AssignmentId;
+
                 entity.Name = model.Name;
                 entity.DueDate = model.DueDate;
                 entity.CourseId = model.CourseId;
+                //entity.StudentId = model.StudentId;
 
                 return ctx.SaveChanges() == 1;
             }

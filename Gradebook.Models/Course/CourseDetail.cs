@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gradebook.Models.Assignment;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -20,5 +21,8 @@ namespace Gradebook.Models.Course
 
         [Display(Name = "End Date")]
         public DateTimeOffset EndDate { get; set; }
+
+        public List<AssignmentListItem> Assignments { get; set; }
+
     }
 }

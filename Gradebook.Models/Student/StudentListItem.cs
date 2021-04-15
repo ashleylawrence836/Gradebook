@@ -10,9 +10,24 @@ namespace Gradebook.Models
     public class StudentListItem
     {
         public int StudentId { get; set; }
-        public string Name { get; set; }
-        public  string Nickname { get; set; }
-        public int CourseId { get; set; }
+
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Display(Name ="Preferred Name")]
+        [DisplayFormat(NullDisplayText = "N/A")]
+        public string Nickname { get; set; }
+
+        [Display(Name = "Full Name")]
+        public string FullName
+        {
+            get
+            { return (FirstName + " "  + LastName); }
+
+        }
 
     }
 }

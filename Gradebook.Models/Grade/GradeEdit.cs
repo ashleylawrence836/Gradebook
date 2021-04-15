@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gradebook.Models.Assignment;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,9 +15,9 @@ namespace Gradebook.Models.Grade
         [Display(Name ="Grade")]
         public decimal Score { get; set; }
 
-        public int CourseId { get; set; }
+        [Display(Name = "Assignment")]
+        public int AssignmentId { get; set; }
 
-        public int StudentId { get; set; }
 
     }
 }

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gradebook.Data
 {
+    public enum Gender { Female, Male, Other, PreferNotToSay}
     public class Student
     {
         [Key]
@@ -17,9 +18,20 @@ namespace Gradebook.Data
         public Guid OwnerId { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
 
         public string Nickname { get; set; }
 
+        public string FullName
+        {
+            get
+            { return (FirstName + " " + LastName); }
+
+        }
+
+        public virtual List<Assignment> Assignments { get; set; }
     }
 }

@@ -35,7 +35,16 @@ namespace Gradebook.WebMVC.Controllers
                             Text = c.Name
                         };
 
+            List<Student> Students = (new StudentService(userId)).GetStudentList().ToList();
+            var studentQuery = from s in Students
+                               select new SelectListItem()
+                               {
+                                   Value = s.StudentId.ToString(),
+                                   Text = s.FullName
+                               };
+
             ViewBag.CourseId = query.ToList();
+            ViewBag.StudentId = studentQuery.ToList();
             return View();
         }
 
@@ -68,6 +77,17 @@ namespace Gradebook.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            List<Course> Courses = (new CourseService(userId)).GetCourseList().ToList();
+            var query = from c in Courses
+                        select new SelectListItem()
+                        {
+                            Value = c.CourseId.ToString(),
+                            Text = c.Name
+                        };
+
+            ViewBag.CourseId = query.ToList();
+
             var service = CreateAssignmentService();
             var detail = service.GetAssignmentById(id);
             var model =
@@ -76,7 +96,6 @@ namespace Gradebook.WebMVC.Controllers
                     AssignmentId = detail.AssignmentId,
                     Name = detail.Name,
                     DueDate = detail.DueDate,
-                    CourseId = detail.CourseId
                 };
 
             return View(model);
@@ -87,7 +106,10 @@ namespace Gradebook.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, AssignmentEdit model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
             if (model.AssignmentId != id)
             {
@@ -104,7 +126,7 @@ namespace Gradebook.WebMVC.Controllers
             }
 
             ModelState.AddModelError("", "Could not update Assignment.");
-            return View();
+            return View(model);
         }
 
         [ActionName("Delete")]

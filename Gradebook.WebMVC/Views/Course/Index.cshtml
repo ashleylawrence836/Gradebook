@@ -12,17 +12,20 @@
 
 @if (TempData.ContainsKey("SaveResult"))
 {
-<div class="alert alert-success fade in" role="alert">
+    <div class="alert alert-success fade in" role="alert">
 
-    <button type="button" class="close" data-dismiss="alert">
-        <span>&times;</span>
-    </button>
-    @TempData["SaveResult"]
-</div>
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
 }
 
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseId)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -39,6 +42,9 @@
     {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.CourseId)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
@@ -48,9 +54,9 @@
                 @Html.DisplayFor(modelItem => item.EndDate)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.CourseId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.CourseId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.CourseId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CourseId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
             </td>
         </tr>
     }

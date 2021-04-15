@@ -11,8 +11,15 @@ namespace Gradebook.Models
     {
         [Required]
         [MinLength(2, ErrorMessage = "Names aren't that short.")]
-        [MaxLength(30, ErrorMessage = "Middle names aren't necessary.")]
-        public string Name { get; set; }
+        [MaxLength(15, ErrorMessage = "Consider using nickname.")]
+        [Display(Name ="First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [MinLength(2, ErrorMessage = "Names aren't that short.")]
+        [MaxLength(40, ErrorMessage = "Too many characters in this field.")]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
 
         [MinLength(2, ErrorMessage = "Nicknames aren't that short.")]
         [MaxLength(10, ErrorMessage = "Just stick with their real name")]

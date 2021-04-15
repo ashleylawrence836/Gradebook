@@ -14,8 +14,8 @@ namespace Gradebook.Models.Grade
         [Range(0,100, ErrorMessage ="Extra credit not currently available.")]
         public decimal Score { get; set; }
 
-        public int StudentId { get; set; }
+        [Display(Name = "Assignment")]
+        public int AssignmentId { get; set; }
 
-        public int CourseId { get; set; }
     }
 }

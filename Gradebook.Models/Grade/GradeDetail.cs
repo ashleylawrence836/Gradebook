@@ -14,9 +14,10 @@ namespace Gradebook.Models.Grade
         [Display(Name ="Grade")]
         public decimal Score { get; set; }
 
-        public int CourseId { get; set; }
+        public int AssignmentId { get; set; }
 
-        public int StudentId { get; set; }
+        public string Student { get; set; }
+        public string Course { get; set; }
 
     }
 }

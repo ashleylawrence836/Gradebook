@@ -58,19 +58,6 @@
     <Compile Include="Course.cs" />
     <Compile Include="Grade.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202104120123443_studentForeignkey.cs" />
-    <Compile Include="Migrations\202104120123443_studentForeignkey.Designer.cs">
-      <DependentUpon>202104120123443_studentForeignkey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104122330343_studentForeignkeyUpdate.cs" />
-    <Compile Include="Migrations\202104122330343_studentForeignkeyUpdate.Designer.cs">
-      <DependentUpon>202104122330343_studentForeignkeyUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104131358012_assignmentForeignkey.cs" />
-    <Compile Include="Migrations\202104131358012_assignmentForeignkey.Designer.cs">
-      <DependentUpon>202104131358012_assignmentForeignkey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
   </ItemGroup>
@@ -83,17 +70,6 @@
       <Project>{AB88A746-0E14-424A-8BAA-DF1DA72189CE}</Project>
       <Name>Gradebook.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104120123443_studentForeignkey.resx">
-      <DependentUpon>202104120123443_studentForeignkey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104122330343_studentForeignkeyUpdate.resx">
-      <DependentUpon>202104122330343_studentForeignkeyUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104131358012_assignmentForeignkey.resx">
-      <DependentUpon>202104131358012_assignmentForeignkey.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

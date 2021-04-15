@@ -25,8 +25,7 @@ namespace Gradebook.Services
                 {
                     OwnerId = _userId,
                     Score = model.Score,
-                    CourseId = model.CourseId,
-                    StudentId = model.StudentId
+                    AssignmentId = model.AssignmentId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -50,8 +49,7 @@ namespace Gradebook.Services
                         {
                             GradeId = e.GradeId,
                             Score = Math.Round(e.Score),
-                            CourseId = e.CourseId,
-                            StudentId = e.StudentId
+                            AssignmentId = e.AssignmentId
                         });
 
                 return query.ToArray();
@@ -72,8 +70,7 @@ namespace Gradebook.Services
                     {
                         GradeId = entity.GradeId,
                         Score = entity.Score,
-                        CourseId = entity.CourseId,
-                        StudentId = entity.StudentId
+                        AssignmentId = entity.AssignmentId
                     };
             }
         }
@@ -88,9 +85,7 @@ namespace Gradebook.Services
                     .Single(e => e.GradeId == grade.GradeId && e.OwnerId == _userId);
 
                 entity.Score = grade.Score;
-                entity.CourseId = grade.CourseId;
-                entity.StudentId = grade.StudentId;
-
+                entity.AssignmentId = grade.AssignmentId;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -111,10 +106,5 @@ namespace Gradebook.Services
             }
         }
 
-        //public List<StudentListItem> GetStudentDropdown()
-        //{
-        //    var students = Students.ToList();
-        //    List<StudentListItem> listItems = new List<StudentListItem>();
-        //}
     }
 }
