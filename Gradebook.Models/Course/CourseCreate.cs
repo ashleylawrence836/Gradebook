@@ -23,5 +23,6 @@ namespace Gradebook.Models.Course
         [Display(Name = "End Date")]
         [DataType(DataType.Date)]
         public DateTimeOffset EndDate { get; set; }
+
     }
 }

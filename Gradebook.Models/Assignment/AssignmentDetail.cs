@@ -17,8 +17,13 @@ namespace Gradebook.Models.Assignment
         [Display(Name = "Due Date")]
         public DateTimeOffset DueDate { get; set; }
 
-        [Display(Name = "Course Id")]
-        public int? CourseId { get; set; }
+        [Display(Name = "Student")]
+        public string Student { get; set; }
+
+        [Display(Name = "Course")]
+        public string Course { get; set; }
+
+        public decimal Grade { get; set; }
 
     }
 }

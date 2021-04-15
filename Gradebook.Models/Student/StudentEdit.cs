@@ -15,9 +15,6 @@ namespace Gradebook.Models.Student
 
         public string FirstName { get; set; }
 
-        [Display(Name = "Course Id")]
-        public int CourseId { get; set; }
-
         public string LastName { get; set; }
         public string Nickname { get; set; }
     }

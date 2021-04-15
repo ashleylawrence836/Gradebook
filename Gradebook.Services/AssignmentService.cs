@@ -79,7 +79,9 @@ namespace Gradebook.Services
                             AssignmentId = entity.AssignmentId,
                             Name = entity.Name,
                             DueDate = entity.DueDate,
-                            CourseId = entity.CourseId
+                            Course = entity.Course.Name,
+                            Grade = entity.Grade.Score,
+                            Student = entity.Student.FullName
                         };
 
             }
@@ -93,6 +95,7 @@ namespace Gradebook.Services
                     ctx
                     .Assignments
                     .Single(e => e.AssignmentId == model.AssignmentId && e.OwnerId == _userId);
+
 
                 entity.Name = model.Name;
                 entity.DueDate = model.DueDate;

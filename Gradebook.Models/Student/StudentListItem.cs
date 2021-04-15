@@ -18,8 +18,6 @@ namespace Gradebook.Models
 
         public string Nickname { get; set; }
 
-        public int CourseId { get; set; }
-
         [Display(Name = "Full Name")]
         public string FullName
         {
