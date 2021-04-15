@@ -19,5 +19,8 @@ namespace Gradebook.Models.Grade
         public int AssignmentId { get; set; }
         public List<AssignmentListItem> Assignments { get; set; }
 
+        [Display(Name = "Student Id")]
+        public int StudentId { get; set; }
+
     }
 }

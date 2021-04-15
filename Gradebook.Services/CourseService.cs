@@ -73,7 +73,7 @@ namespace Gradebook.Services
                     ctx
                     .Courses
                     .Single(e => e.CourseId == id && e.OwnerId == _userId);
-
+                //decimal average = Grades.Sum() / Assignments.Count())
                 return
                     new CourseDetail
                     {
@@ -81,7 +81,7 @@ namespace Gradebook.Services
                         Name = entity.Name,
                         StartDate = entity.StartDate,
                         EndDate = entity.EndDate,
-                        //Average = average
+                        //Average = 
                     };
             }
         }

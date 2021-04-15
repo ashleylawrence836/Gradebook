@@ -95,7 +95,8 @@ namespace Gradebook.WebMVC.Controllers
                 {
                     GradeId = detail.GradeId,
                     Score = detail.Score,
-                    AssignmentId = detail.AssignmentId
+                    AssignmentId = detail.AssignmentId,
+                    StudentId = detail.StudentId
                 };
 
             return View(model);

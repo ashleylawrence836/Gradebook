@@ -23,7 +23,10 @@ namespace Gradebook.Models.Course
         public DateTimeOffset EndDate { get; set; }
 
         public List<AssignmentListItem> Assignments { get; set; }
-        public decimal Average { get; set; }
+        ////public decimal Average
+        //{
+        //    //get { return (AssignmentDetail.Grade.Sum() / Assignments.Count()); }
+        //}
 
     }
 }
