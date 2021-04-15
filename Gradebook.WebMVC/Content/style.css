@@ -3,6 +3,10 @@
     color: white;
 }
 
+a {
+    color: lime !important;
+}
+
 body {
     background-image: url(Assets/schoolSupplies.jpg);
     margin: 0;

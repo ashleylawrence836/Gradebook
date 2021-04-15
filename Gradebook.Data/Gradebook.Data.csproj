@@ -58,6 +58,15 @@
     <Compile Include="Course.cs" />
     <Compile Include="Grade.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202104150336322_InitialCreate.cs" />
+    <Compile Include="Migrations\202104150336322_InitialCreate.Designer.cs">
+      <DependentUpon>202104150336322_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104151518418_gradeForeignkey.cs" />
+    <Compile Include="Migrations\202104151518418_gradeForeignkey.Designer.cs">
+      <DependentUpon>202104151518418_gradeForeignkey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
   </ItemGroup>
@@ -70,6 +79,14 @@
       <Project>{AB88A746-0E14-424A-8BAA-DF1DA72189CE}</Project>
       <Name>Gradebook.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202104150336322_InitialCreate.resx">
+      <DependentUpon>202104150336322_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104151518418_gradeForeignkey.resx">
+      <DependentUpon>202104151518418_gradeForeignkey.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

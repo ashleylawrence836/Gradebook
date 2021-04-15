@@ -34,7 +34,7 @@ namespace Gradebook.WebMVC.Controllers
                             Text = a.Name
                         };
 
-            ViewBag.AssignmentId = assignmentQuery.ToList();
+            ViewBag.Assignment = assignmentQuery.ToList();
             return View();
 
         }
@@ -95,7 +95,8 @@ namespace Gradebook.WebMVC.Controllers
                 {
                     GradeId = detail.GradeId,
                     Score = detail.Score,
-                    AssignmentId = detail.AssignmentId
+                    AssignmentId = detail.AssignmentId,
+                    StudentId = detail.StudentId
                 };
 
             return View(model);

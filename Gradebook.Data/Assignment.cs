@@ -34,6 +34,6 @@ namespace Gradebook.Data
         [ForeignKey("StudentId")]
         public virtual Student Student { get; set; }
 
-        //public virtual Grade Grade { get; set; }
+        public virtual List<Grade> Grades { get; set; }
     }
 }

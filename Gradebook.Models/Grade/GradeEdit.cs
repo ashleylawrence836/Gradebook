@@ -18,6 +18,8 @@ namespace Gradebook.Models.Grade
         [Display(Name = "Assignment")]
         public int AssignmentId { get; set; }
 
+        [Display(Name = "Student Id")]
+        public int StudentId { get; set; }
 
     }
 }
