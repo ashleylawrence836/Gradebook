@@ -32,5 +32,6 @@ namespace Gradebook.Data
 
         }
 
+        public virtual List<Assignment> Assignments { get; set; }
     }
 }

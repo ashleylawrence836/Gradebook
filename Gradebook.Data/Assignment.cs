@@ -27,5 +27,13 @@ namespace Gradebook.Data
 
         [ForeignKey("CourseId")]
         public virtual Course Course { get; set; }
+
+        [Required]
+        public int StudentId { get; set; }
+
+        [ForeignKey("StudentId")]
+        public virtual Student Student { get; set; }
+
+        public virtual Grade Grade { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace Gradebook.Models.Assignment
         public DateTimeOffset DueDate { get; set; }
 
         [Display(Name = "Course")]
-        public int CourseId { get; set; }
+        public int? CourseId { get; set; }
 
     }
 }

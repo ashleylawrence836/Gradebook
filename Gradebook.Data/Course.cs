@@ -23,5 +23,8 @@ namespace Gradebook.Data
 
         [Required]
         public DateTimeOffset EndDate { get; set; }
+
+        public virtual List<Assignment> Assignments { get; set; }
+
     }
 }
