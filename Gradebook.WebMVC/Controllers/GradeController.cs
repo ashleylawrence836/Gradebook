@@ -34,16 +34,7 @@ namespace Gradebook.WebMVC.Controllers
                             Text = a.Name
                         };
 
-            List<Student> Students = (new StudentService(userId)).GetStudentList().ToList();
-            var studentQuery = from s in Students
-                               select new SelectListItem()
-                               {
-                                   Value = s.StudentId.ToString(),
-                                   Text = s.FullName
-                               };
-
             ViewBag.AssignmentId = assignmentQuery.ToList();
-            ViewBag.StudentId = studentQuery.ToList();
             return View();
 
         }
@@ -104,9 +95,7 @@ namespace Gradebook.WebMVC.Controllers
                 {
                     GradeId = detail.GradeId,
                     Score = detail.Score,
-                    AssignmentId = detail.AssignmentId,
-                    StudentId = detail.StudentId,
-                    CourseId = detail.CourseId
+                    AssignmentId = detail.AssignmentId
                 };
 
             return View(model);

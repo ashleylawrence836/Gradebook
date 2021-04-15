@@ -25,9 +25,7 @@ namespace Gradebook.Services
                 {
                     OwnerId = _userId,
                     Score = model.Score,
-                    AssignmentId = model.AssignmentId,
-                    StudentId = model.StudentId,
-                    CourseId = model.CourseId
+                    AssignmentId = model.AssignmentId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -51,9 +49,7 @@ namespace Gradebook.Services
                         {
                             GradeId = e.GradeId,
                             Score = Math.Round(e.Score),
-                            AssignmentId = e.AssignmentId,
-                            StudentId = e.StudentId,
-                            CourseId = e.CourseId
+                            AssignmentId = e.AssignmentId
                         });
 
                 return query.ToArray();
@@ -74,9 +70,7 @@ namespace Gradebook.Services
                     {
                         GradeId = entity.GradeId,
                         Score = entity.Score,
-                        AssignmentId = entity.AssignmentId,
-                        StudentId = entity.StudentId,
-                        CourseId = entity.CourseId
+                        AssignmentId = entity.AssignmentId
                     };
             }
         }
@@ -92,9 +86,6 @@ namespace Gradebook.Services
 
                 entity.Score = grade.Score;
                 entity.AssignmentId = grade.AssignmentId;
-                entity.StudentId = grade.StudentId;
-                entity.CourseId = grade.CourseId;
-
 
                 return ctx.SaveChanges() == 1;
             }

@@ -51,7 +51,7 @@ namespace Gradebook.Services
                             Name = e.Name,
                             StartDate = e.StartDate,
                             EndDate = e.EndDate
-                        });
+                        }) ;
 
                 return query.ToArray();
             }

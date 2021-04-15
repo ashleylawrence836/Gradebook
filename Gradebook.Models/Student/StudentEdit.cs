@@ -9,12 +9,13 @@ namespace Gradebook.Models.Student
 {
     public class StudentEdit
     {
+        [Display(Name = "Student Id")]
         public int StudentId { get; set; }
 
         [Display(Name = "First Name")]
-
         public string FirstName { get; set; }
 
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
         public string Nickname { get; set; }
     }

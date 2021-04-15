@@ -34,14 +34,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FullName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FullName)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Nickname)
         </dt>
 
@@ -49,34 +41,13 @@
             @Html.DisplayFor(model => model.Nickname)
         </dd>
 
-        @*<table class="table">
-            <tr>
-                <th>
-                    Course
-                </th>
-                <th>
-                    Grade
-                </th>
-                <th>
-                    Credits
-                </th>
-            </tr>
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
 
-            @foreach (var item in Model.CourseId)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Course.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Grade)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Course.)
-                    </td>
-                </tr>
-            }
-        </table>*@
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
 
     </dl>
 </div>

@@ -9,8 +9,8 @@ namespace Gradebook.Models.Assignment
 {
     public class AssignmentListItem
     {
+        [Display(Name = "Assignment Id")]
         public int AssignmentId { get; set; }
-        public Guid OwnerId { get; set; }
         public string Name { get; set; }
 
         [Display(Name = "Due Date")]

@@ -7,7 +7,7 @@
 <h2>Grades</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Post New Grade", "Create")
 </p>
 
 @if (TempData.ContainsKey("SaveResult"))
@@ -24,13 +24,16 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.GradeId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Score)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.AssignmentId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.StudentId)
+            @Html.DisplayNameFor(model => model.Student)
         </th>
         <th></th>
     </tr>
@@ -39,13 +42,16 @@
     {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.GradeId)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Score)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.AssignmentId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.StudentId)
+                @Html.DisplayFor(modelItem => item.Student)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.GradeId }) |

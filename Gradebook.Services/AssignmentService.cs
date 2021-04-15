@@ -25,7 +25,8 @@ namespace Gradebook.Services
                     OwnerId = _userId,
                     Name = model.Name,
                     DueDate = model.DueDate,
-                    CourseId = model.CourseId
+                    CourseId = model.CourseId,
+                    StudentId = model.StudentId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -50,7 +51,7 @@ namespace Gradebook.Services
                             AssignmentId = e.AssignmentId,
                             Name = e.Name,
                             DueDate = e.DueDate,
-                            CourseId = e.CourseId
+                            Course = e.Course.Name
                         });
 
                 return query.ToArray();
@@ -80,7 +81,6 @@ namespace Gradebook.Services
                             Name = entity.Name,
                             DueDate = entity.DueDate,
                             Course = entity.Course.Name,
-                            Grade = entity.Grade.Score,
                             Student = entity.Student.FullName
                         };
 
@@ -100,6 +100,7 @@ namespace Gradebook.Services
                 entity.Name = model.Name;
                 entity.DueDate = model.DueDate;
                 entity.CourseId = model.CourseId;
+                //entity.StudentId = model.StudentId;
 
                 return ctx.SaveChanges() == 1;
             }
